@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vad/vad.dart';
-import 'package:vad_example/recording.dart';
-import 'package:vad_example/vad_settings_dialog.dart';
-import 'package:vad_example/ui/vad_ui.dart';
-import 'package:vad_example/ui/app_theme.dart';
+import 'package:voice_detection_flutter/recording.dart';
+import 'package:voice_detection_flutter/ui/app_theme.dart';
+import 'package:voice_detection_flutter/ui/vad_ui.dart';
+import 'package:voice_detection_flutter/vad_settings_dialog.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

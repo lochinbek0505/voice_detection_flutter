@@ -1,14 +1,14 @@
 // lib/ui/vad_ui.dart
 
+import 'dart:html' as html;
 import 'dart:typed_data';
 
-import 'package:file_picker/file_picker.dart';
-import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart' as audioplayers;
-import 'package:vad_example/recording.dart';
-import 'package:vad_example/audio_utils.dart';
-import 'package:vad_example/vad_settings_dialog.dart';
-import 'dart:html' as html;
+import 'package:flutter/material.dart';
+import 'package:voice_detection_flutter/audio_utils.dart';
+import 'package:voice_detection_flutter/recording.dart';
+import 'package:voice_detection_flutter/vad_settings_dialog.dart';
+
 class VadUIController {
   Function? scrollToBottom;
 
@@ -64,9 +64,11 @@ class _VadUIState extends State<VadUI> {
       widget.controller!.scrollToBottom = _scrollToBottom;
     }
   }
+
   // Audio faylni tanlash funksiyasi
   Future<void> pickAudioFile() async {
-    final html.FileUploadInputElement uploadInput = html.FileUploadInputElement();
+    final html.FileUploadInputElement uploadInput =
+        html.FileUploadInputElement();
     uploadInput.accept = '.mp3, .wav, .aac, .m4a';
     uploadInput.click();
 
@@ -89,6 +91,7 @@ class _VadUIState extends State<VadUI> {
       reader.readAsArrayBuffer(file);
     });
   }
+
   Future<void> processFile(String filePath, Uint8List audioData) async {
     // Misol uchun, audio faylni tanlab, uning boshida va oxirida speechStart va speechEnd yozuvlarini yaratamiz.
     // Bu yerda faqat demo sifatida vaqt o‘tishini taqlid qilamiz.
@@ -374,7 +377,6 @@ class _VadUIState extends State<VadUI> {
               mainAxisSize: MainAxisSize.min,
               children: [
 // ... VadUI ichida build() metodida:
-
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

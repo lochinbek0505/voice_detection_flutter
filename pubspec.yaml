@@ -1,4 +1,4 @@
-name: vad_example
+name: voice_detection_flutter
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -37,9 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   permission_handler: ^11.4.0
   audioplayers: ^6.3.0
-  vad:
-    path: ../
   file_picker: ^10.1.2
+  vad: ^0.0.5
 
 dev_dependencies:
   flutter_test:
